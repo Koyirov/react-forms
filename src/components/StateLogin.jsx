@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 export default function StateLogin() {
-
   const [enteredValues, setEnteredValues] = useState({
     email: '',
-    password: ''
+    password: '',
   });
 
   const handleSubmit = (event) => {
@@ -14,11 +13,11 @@ export default function StateLogin() {
   };
 
   const handleInputChange = (identifier, value) => {
-    setEnteredValues(prevValues =>  ({
+    setEnteredValues((prevValues) => ({
       ...prevValues,
       [identifier]: value,
     }));
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -42,7 +41,9 @@ export default function StateLogin() {
             id="password"
             type="password"
             name="password"
-            onChange={(event) => handleInputChange('password', event.target.value)}
+            onChange={(event) =>
+              handleInputChange('password', event.target.value)
+            }
             value={enteredValues.password}
           />
         </div>
