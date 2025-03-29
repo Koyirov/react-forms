@@ -18,7 +18,7 @@ export default function StateLogin() {
     isNotEmpty(enteredValues.email);
   const passwordIsInvalid =
     didEdit.password &&
-    hasMinLength(enteredValues.password);
+    !hasMinLength(enteredValues.password, 6);
 
   const handleSubmit = (event) => {
     event.preventDefault();
